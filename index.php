@@ -8,7 +8,7 @@ session_start();
 	if(isset($_POST['ac'])){
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "root12345";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -16,7 +16,7 @@ session_start();
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "USE bookstore";
+		$sql = "USE BookStore";
 		$conn->query($sql);
 
 		$sql = "SELECT * FROM book WHERE BookID = '".$_POST['ac']."'";
@@ -43,7 +43,7 @@ session_start();
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "USE bookstore";
+		$sql = "USE BookStore";
 		$conn->query($sql);
 
 		$sql = "DELETE FROM cart";
@@ -60,7 +60,7 @@ session_start();
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "USE bookstore";
+	$sql = "USE BookStore";
 	$conn->query($sql);	
 
 	$sql = "SELECT * FROM book";
