@@ -8,7 +8,7 @@ session_start();
 	if(isset($_POST['ac'])){
 		$servername = "localhost";
 		$username = "root";
-		$password = "root12345";
+		$password = "";
 
 		$conn = new mysqli($servername, $username, $password);
 

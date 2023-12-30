@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS bookstore;
-USE bookstore;
+CREATE DATABASE BookStore;
+USE BookStore;
 
-CREATE TABLE IF NOT EXISTS book(
+CREATE TABLE Book(
     BookID varchar(50),
 	BookTitle varchar(200),
     ISBN varchar(20),
@@ -12,14 +12,14 @@ CREATE TABLE IF NOT EXISTS book(
     PRIMARY KEY (BookID)
 );
 
-CREATE TABLE IF NOT EXISTS users(
+CREATE TABLE Users(
     UserID int not null AUTO_INCREMENT,
     UserName varchar(128),
     Password varchar(16),
     PRIMARY KEY (UserID)
 );
 
-CREATE TABLE IF NOT EXISTS customer (
+CREATE TABLE Customer (
 	CustomerID int not null AUTO_INCREMENT,
     CustomerName varchar(128),
     CustomerPhone varchar(12),
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS customer (
     CONSTRAINT FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS `order`(
+CREATE TABLE `Order`(
 	OrderID int not null AUTO_INCREMENT,
     CustomerID int,
     BookID varchar(50),
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `order`(
     CONSTRAINT FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS cart(
+CREATE TABLE Cart(
 	CartID int not null AUTO_INCREMENT,
     CustomerID int,
     BookID varchar(50),
